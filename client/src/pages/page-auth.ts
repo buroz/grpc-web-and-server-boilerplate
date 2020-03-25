@@ -1,11 +1,8 @@
-import { customElement, LitElement, html } from "lit-element";
+import { customElement, html } from "lit-element";
+import { Layout } from "../components/_layout";
 
 @customElement("page-auth")
-export class PageAuth extends LitElement {
-  createRenderRoot() {
-    return this;
-  }
-
+export class PageAuth extends Layout {
   render() {
     return html`
       <div class="container mx-auto">
@@ -15,14 +12,14 @@ export class PageAuth extends LitElement {
             <!-- Col -->
             <div
               class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
-              style="background-image: url('https://source.unsplash.com/K4mSJ7kc0As/600x800')"
+              style="background-image: url('auth-poster.jpg')"
             ></div>
             <!-- Col -->
             <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
               <figure class="pt-4">
                 <img class="h-10 mx-auto" src="/brand.svg" alt="" />
               </figure>
-              <slot></slot>
+              <login-form />
             </div>
           </div>
         </div>

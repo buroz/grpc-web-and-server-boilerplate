@@ -1,5 +1,14 @@
 import { customElement, LitElement, html } from "lit-element";
 
+const styles = {
+  label: "block mb-2 text-sm font-bold text-gray-700",
+  input:
+    "w-full px-6 py-4 text-sm leading-tight text-gray-700 bg-gray-200 focus:bg-white border-transparent rounded focus:outline-none focus:shadow-outline appearance-none",
+  button:
+    "w-full px-6 py-4 font-bold text-white rounded   hover:bg-gray-800 active:bg-blue-700 bg-black focus:outline-none",
+  link: "inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
+};
+
 @customElement("login-form")
 export class LoginForm extends LitElement {
   createRenderRoot() {
@@ -10,53 +19,42 @@ export class LoginForm extends LitElement {
     return html`
       <form class="px-2 lg:px-8 pt-6 pb-8 mb-4 bg-white rounded">
         <div class="mb-4">
-          <label class="block mb-2 text-sm font-bold text-gray-700" for="username">
-            Username
+          <label class="${styles.label}" for="username">
+            Email
           </label>
-          <input
-            class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            id="email"
-            type="text"
-            placeholder="Email"
-          />
+          <input class="${styles.input}" id="email" type="text" placeholder="Email" />
         </div>
+
         <div class="mb-4">
-          <label class="block mb-2 text-sm font-bold text-gray-700" for="password">
-            Password
+          <label class="${styles.label}" for="password">
+            Şifre
           </label>
-          <input
-            class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            id="password"
-            type="password"
-            placeholder="Şifre"
-          />
-          <p class="text-xs italic text-red-500">Please choose a password.</p>
+          <input class="${styles.input}" id="password" type="password" placeholder="Şifre" />
         </div>
+
         <div class="mb-4">
           <input class="mr-2 leading-tight" type="checkbox" id="checkbox_id" />
-          <label class="text-sm" for="checkbox_id">
-            Remember Me
+          <label class="text-sm text-gray-500" for="checkbox_id">
+            Beni Hatırla
           </label>
         </div>
+
         <div class="mb-6 text-center">
-          <button
-            class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-            type="button"
-          >
-            Sign In
+          <button class="${styles.button}" type="button">
+            Kayıt Ol
           </button>
         </div>
+
         <hr class="mb-6 border-t" />
+
         <div class="text-center">
-          <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="./register.html">
+          <a class="${styles.link}" href="./register.html">
             Create an Account!
           </a>
         </div>
+
         <div class="text-center">
-          <a
-            class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-            href="./forgot-password.html"
-          >
+          <a class="${styles.link}" href="./forgot-password.html">
             Forgot Password?
           </a>
         </div>
