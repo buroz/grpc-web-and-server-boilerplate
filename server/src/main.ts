@@ -5,8 +5,9 @@ import grpc from "grpc";
 
 // Services
 import authHandler from "./handlers/auth";
+import urlHandler from "./handlers/url";
 
-import { protoIndex } from "../../proto";
+import { protoIndex } from "./proto";
 
 // const readFileAsync = promisify(readFileAync)
 
@@ -27,6 +28,7 @@ export const startServer: StartServerType = (): void => {
 
   // Services
   server.addService(authHandler.service, authHandler.handler);
+  server.addService(urlHandler.service, urlHandler.handler);
 
   server.bindAsync(
     `${serverHost}:${serverPort}`,

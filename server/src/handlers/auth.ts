@@ -3,8 +3,8 @@ import { randomBytes, pbkdf2Sync } from "crypto";
 import { ServerUnaryCall, sendUnaryData } from "grpc";
 import { JsonWebTokenError, sign, verify } from "jsonwebtoken";
 
-import { RegisterRequest, RegisterResponse, LoginRequest, LoginResponse } from "../../../proto/auth/auth_pb";
-import { AuthService, IAuthServer } from "../../../proto/auth/auth_grpc_pb";
+import { RegisterRequest, RegisterResponse, LoginRequest, LoginResponse } from "../proto/auth/auth_pb";
+import { AuthService, IAuthServer } from "../proto/auth/auth_grpc_pb";
 
 const userPassword =
   "e61dca230c03a968c56842e3e4af9194a363de2f2f979fbf0ca46140c82695ebec1ec0b4a76a4e5ff0fdde9cae654cb4c60c35f65f0d10fbe5bf95050c93bab3.7ca85a9d51";

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package url;
+
+service Url {
+  rpc GetBySlug (UrlRequest) returns (UrlResponse);
+}
+
+message UrlRequest {
+  string domain = 1;
+  string slug = 2;
+}
+
+message UrlResponse {
+  string domain = 1;
+  string slug = 2;
+}
